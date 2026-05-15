@@ -13,7 +13,7 @@ async function fetchNews() {
         newsData = await res.json();
     } catch (error) {
         alert(`ニュースの取得に失敗しました。
-            ${err.message}`);
+            ${error.message}`);
     }
 }
 // ニュース描画

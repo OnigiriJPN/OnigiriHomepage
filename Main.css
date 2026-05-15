@@ -1,0 +1,29 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f5f6f8;
+}
+
+.header {
+    padding: 16px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.container {
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.rank {
+    width: 300px;
+}

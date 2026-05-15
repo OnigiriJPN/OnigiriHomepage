@@ -2,7 +2,7 @@ let newsData = [];
 // ニュース取得
 async function fetchNews() {
     try {
-        const res = await fetch("../api/news");
+        const res = await fetch("../api/news/news.json");
         if (!res.ok) {
             alert(`ニュースの取得に失敗しました。
                 ${res.status}

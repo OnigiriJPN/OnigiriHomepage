@@ -40,3 +40,53 @@ async function loadNews(){
         el.appendChild(div);
     })
 }
+
+function share(id) {
+    const item = newsData.find(n => n.id === id);
+    if (!item) {
+        alert("ニュースが見つかりませんでした。");
+        return;
+    }
+    const btn = event.target;
+
+    const original = btn.innerHTML;
+    btn.innerHTML = `<span class="spinner"></span>送信中です。しばらくお待ちください。`;
+    btn.disabled = true;
+    
+    setTimeout(() => {
+        item.shares = (item.shares || 0) + 1;
+
+        const text = encodeURIComponent(`Onigiriニュース\n${item.message}\n\n#OnigiriNews`);
+
+        window.open(`https://twitter.com/intent/tweet?text=${text}`, "_blank");
+        btn.innerHTML = original;
+        btn.disabled = false;
+        console.log("Shared:",item);
+    }, 500);
+}
+
+// ランキング
+
+async function loadRanking() {
+    await fetchNews();
+
+    const el = document.getElementById("ranking");
+    if(!el) return;
+
+    const sorted = [...newsData].sort((a,b) => (b.shares || 0) - (a.shares || 0));
+
+    el.innerHTML = "";
+
+    sorted.forEach((item, i) => {
+        const div = document.createElement("div");
+        div.className = "card";
+
+        div.innerHTML = `
+        🏆 #${i+1}<br>
+        🍙 ${item.message}<br>
+        📊 ${item.shares || 0}
+        `;
+
+        el.appendChild(div);
+    });
+}

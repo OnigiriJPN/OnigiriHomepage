@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f5f6f8;
+}
+
+.header {
+    padding: 16px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.container {
+    padding: 20px;
+}
+
+.card {
+    background: white;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.x-btn {
+    margin-top: 6px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: none;
+    background: #111;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.spinner {
+    width: 12px;
+    height: 12px;
+    border: 2px solid #666;
+    border-top: 2px solid white;
+    border-radius: 50%;
+    animation: spin 0.7s linear infinite;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0); }
+    100% { transform: rotate(360deg); }
+}

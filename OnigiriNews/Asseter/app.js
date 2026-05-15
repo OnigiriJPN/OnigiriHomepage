@@ -26,6 +26,17 @@ async function loadNews(){
     newsData.forEach(item => {
         const div = document.createElement("div");
         div.className = "card";
-        
+
+        div.innerHTML = `
+            🕒 ${item.DateNow}<br>
+            🍙 ${item.message}<br>
+            📊 ${item.shares || 0}
+
+            <button class="x-btn" onclick="share(${item.id})">
+                X(旧ツイッター)でつぶやく
+            </button>
+        `;
+
+        el.appendChild(div);
     })
 }

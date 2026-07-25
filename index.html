@@ -5,6 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Onigiri ホームページ・トップページ</title>
     <link rel="stylesheet" href="Main.css">
+    <!-- 必須タグ -->
+  <meta property="og:title" content="ページのタイトルが入ります" />
+  <meta property="og:description" content="ページの説明文がここに入ります（80〜120文字程度）。" />
+  <meta property="og:image" content="https://example.com" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:type" content="article" /> <!-- トップページは website、下層ページは article -->
+ <!-- 作者の指定（OGP規格） -->
+
+  <!-- キーワードの指定（従来のHTML規格） -->
+  <meta name="keywords" content="OnigiriHp,おにぎり,おにぎりYTOfficial" />
     <meta name="google-site-verification" content="RCuIloEpupoyk6FVp4iUJaIR4PDihMaTQ8D7CtBRC7Q" />
     <meta name="google-adsense-account" content="ca-pub-1005180389636548">
 </head>
@@ -30,5 +40,18 @@
     <script>
         loadRanking();
     </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://onigiri-homepages.vercel.app/OnigiriNews/onigirinews-main.html",
+  "@type": "Article",
+  "headline": "おにぎりNews",
+  "author": {
+    "@type": "Person",
+    "name": "OnigiriTV",
+    "url": "https://onigiri-homepages.vercel.app/" 
+  }
+}
+</script>
+
 </body>
 </html>
